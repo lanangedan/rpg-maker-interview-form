@@ -1,8 +1,9 @@
+<?php
 /*
 Plugin Name: RPG Maker Interview Form
 Plugin URI: https://github.com/lanangedan/rpg-maker-interview-form
 Description: Plugin RPG Form dengan chapter & whitelist
-Version: 2.0.1
+Version: 2.0.3
 Author: Lanang
 Author URI: https://tombolstart.com
 License: GPL2
@@ -82,4 +83,5 @@ add_action('rest_api_init', function () {
   }
 });
 
+?>
 
