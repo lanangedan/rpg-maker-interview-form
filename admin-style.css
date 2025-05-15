@@ -1,0 +1,27 @@
+#rpg-questions table.widefat th,
+#rpg-questions table.widefat td {
+  vertical-align: top;
+  padding: 8px;
+}
+
+#rpg-questions input[type="text"],
+#rpg-questions select,
+#rpg-questions input[type="number"] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#rpg-copy-link {
+  display: block;
+  margin: 8px 0;
+  padding: 6px 10px;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  font-family: monospace;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+#rpg-copy-link:hover {
+  background: #e1e1e1;
+}
