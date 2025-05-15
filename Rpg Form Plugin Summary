@@ -1,0 +1,75 @@
+**📝 Summary Pengembangan Plugin: RPG Maker Interview Form (WordPress Plugin)**
+
+---
+
+### ✅ Plugin Name
+
+**RPG Maker Interview Form**
+
+### 🎯 Tujuan
+
+Membuat plugin WordPress bergaya RPG untuk mengisi pertanyaan per chapter, mengirimkan jawaban ke Google Sheets melalui Google Apps Script, dengan fitur whitelist token ref dan dynamic chapter.
+
+---
+
+### 🔧 Fitur Versi Terakhir (v2.0.1)
+
+| Fitur                                                                       | Status |
+| --------------------------------------------------------------------------- | ------ |
+| Admin bisa membuat dan mengedit "Interview Chapter" (CPT)                   | ✅      |
+| Admin bisa menambahkan pertanyaan per baris (dengan tipe: text atau choice) | ✅      |
+| Input opsi hanya muncul jika tipe = "choice"                                | ✅      |
+| Whitelist ref/token per chapter                                             | ✅      |
+| Auto-generate link dengan slug chapter dan ref                              | ✅      |
+| Halaman form membaca chapter berdasarkan URL `?chapter=...&ref=...`         | ✅      |
+| Validasi ref (harus sesuai whitelist untuk bisa submit)                     | ✅      |
+| Jawaban dikirim ke Google Sheets via Apps Script                            | ✅      |
+| Chapter dan pertanyaan disimpan di database WordPress (post meta)           | ✅      |
+| Styling dialog RPG sederhana + flow next-question                           | ✅      |
+
+---
+
+### 🛠 File Plugin Penting
+
+* `rpg-maker-interview-form.php` → file utama plugin, register CPT, shortcode, integrasi logic
+* `ui-admin.php` → render UI dashboard untuk input pertanyaan per chapter
+* `admin-style.css` → styling tampilan admin
+* `ui-form.php` → render HTML game RPG di frontend (via shortcode), ambil pertanyaan via REST API
+
+---
+
+### 🔌 GitHub Integration
+
+* Plugin sudah memiliki header metadata GitHub Updater
+* Versi dapat di-update langsung dari GitHub repo jika pakai plugin `GitHub Updater`
+* Penggunaan tag versi seperti `v2.0.1` wajib agar update muncul di WordPress
+
+---
+
+### 🧠 Catatan Teknis Penting
+
+* CPT `rpg_chapter` harus diregister di `init` dengan `'show_in_rest' => true` dan `rest_base`
+* **Flush permalinks** wajib setelah perubahan `register_post_type`
+* Wordfence dapat memblokir REST API jika opsi "prevent REST discovery" aktif
+* Endpoint REST API aktif jika `https://domain.com/wp-json/wp/v2/rpg_chapter?slug=...` tidak error
+
+---
+
+### 📦 Langkah Berikutnya (Opsional)
+
+* Tambahkan export jawaban ke CSV dari UI admin (opsional)
+* Tambahkan fitur multi-player (jawaban disimpan berdasarkan user login)
+* Tambahkan preview pertanyaan sebelum dimainkan
+* Tambahkan countdown timer per chapter / sesi interview
+
+---
+
+### 🚀 Link Penting
+
+* Endpoint contoh: `https://tombolstart.com/wp-json/wp/v2/rpg_chapter?slug=event-interview`
+* Shortcode form: `[rpg_form_game]` di halaman WordPress
+* Google Apps Script endpoint: (sudah terhubung manual via URL & secret)
+
+---
+
+Jika kamu ingin migrasi ke format plugin modern (modular atau OOP), atau ingin versi builder UI dengan React di admin, tinggal bilang!
