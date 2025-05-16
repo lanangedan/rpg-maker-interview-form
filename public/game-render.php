@@ -1,4 +1,3 @@
-
 <?php
 add_shortcode('rpg_form_game', function () {
   ob_start();
@@ -33,8 +32,8 @@ add_shortcode('rpg_form_game', function () {
     const chapterSlug = <?= json_encode($chapter_slug); ?>;
     const ref = <?= json_encode($ref_token); ?>;
     const questions = <?= json_encode($questions); ?>;
-    const secret = "Tombol#2345tart!";
-    const endpoint = "https://script.google.com/macros/s/AKfyc.../exec"; // Ganti ini
+    const secret = "Tombol2345tart!";
+    const endpoint = "https://script.google.com/macros/s/AKfycbwJX_t7vdIX3ks3EPpvgnJZXobLzSRW9LW7FTu3W-vdQbGh-rrfkISo1sbxuMjtOGzq/exec"; // Ganti ini
 
     let current = 0;
     let answers = [];
